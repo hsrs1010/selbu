@@ -1,0 +1,98 @@
+<div class="container" *ngIf="selbu">
+    <div class="input-form-backgroud row"> 
+        <div class="input-form col-md-12 mx-auto">
+            <div class="row">
+                <h4 class="mb-3">매물 상세</h4> 
+            </div>
+            <form class="validation-form" novalidate> 
+                <div class="row"> 
+                    <div class="col-md-6"> 
+                    <p>상권 구분 : {{selbu.place_name}}</p>
+                </div> 
+                <div class="col-md-6">
+                    <p>상호 : {{selbu.nickname}}</p>
+                </div> 
+                <hr>
+                </div> 
+                <div class="row"> 
+                    <div class="col-md-6"> 
+                    <p>임차인 전화 번호 : {{selbu.lessor_home_number}}</p>
+                </div>
+                <div class="col-md-6">
+                    <p>임차인 휴대폰 번호 : {{selbu.lessor_phone_number}}</p>
+                </div>
+                <hr>
+                </div>
+                <div class="col-md-12">
+                    <p>주소 : {{selbu.place}} {{selbu.detail_place}}</p> 
+                </div>
+                <hr>
+                <div class="row"> 
+                    <div class="col-md-6">
+                    <p>업종 : {{selbu.upjong}}</p> 
+                </div>
+                <div class="col-md-6">
+                    <p>상세 업종 : {{selbu.detail_upjong}}</p>
+                </div>
+                <hr>
+                </div>
+                <div class="row"> 
+                <div class="col-md-6">
+                    <p>통화 일자 : {{selbu.call_date  | date :  "y년 MM월 dd일" }}</p>
+                </div>
+                <div class="col-md-6">
+                    <p>통화 내용 : {{selbu.call_content}}</p>
+                </div>
+                <hr>
+                </div>
+                <div class="row"> 
+                    <div class="col-md-3">
+                        <p>보증금 : <br>{{selbu.deposit | currency : 'KRW':'symbol'}}원</p>
+                    </div> 
+                    <div class="col-md-3">
+                        <p>월세 : <br>{{selbu.month_price | currency : 'KRW':'symbol'}}원</p>
+                    </div>
+                    <div class="col-md-3">
+                        <p>권리금 : <br>{{selbu.entitlement | currency : 'KRW':'symbol'}}원</p>
+                    </div>
+                    <div class="col-md-3">
+                        <p>관리비 : <br>{{selbu.administrative_expenses | currency : 'KRW':'symbol'}}원</p>
+                    </div>
+                    <hr>
+                </div>
+                <div class="col-md-12">
+                    <p>평수 : {{selbu.acreage}}평</p>
+                </div>
+                <hr>
+                <div class="col-md-12">
+                    <p>기타 내용 : {{selbu.other_information}}</p>
+                </div>
+                <hr>
+                <div class="col-md-12">
+                    <p>매물 상태 : {{selbu.status}}</p>
+                </div>
+                <hr>
+                <div class="row"> 
+                    <div class="col-md-6">
+                        <p>접수 유무 : {{selbu.receipt}}</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p>접수 일자 : {{selbu.receipt_date | date :  "y년 MM월 dd일" }}</p>
+                    </div>
+                    <hr>
+                </div>
+                <button class="btn btn-primary col-md-3" routerLink="/buildings">매물 전체</button>
+                &nbsp;
+                <button class="btn btn-primary col-md-3" routerLink="/update/{{selbu.id}}">수정 하기</button>
+                &nbsp;
+                <app-buildings-delete></app-buildings-delete>
+                &nbsp;
+                <app-kakao-map></app-kakao-map>
+                &nbsp;
+                <br>
+                <button class="print btn btn-primary" (click)="print()">인쇄</button>
+            </form>
+        </div>
+    </div>
+</div>
+<hr>

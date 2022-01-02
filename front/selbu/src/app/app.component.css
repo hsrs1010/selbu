@@ -1,0 +1,29 @@
+h1 {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 90px;
+}
+h1 span:nth-child(1) {
+    color:#8A2BE2;
+}
+h1 span:nth-child(2) {
+    color:#8A2BE2;
+}
+h1 span:nth-child(3) {
+    color:#fbbc05;
+}
+h1 span:nth-child(4) {
+    color:#fbbc05;
+}
+h1 span:nth-child(5) {
+    color:#fbbc05;
+}
+/* h1 span:nth-child(6) {
+    color:#ea4335;
+} */
+
+@media print {
+    h1, router-outlet{
+        display: none;
+    }
+}

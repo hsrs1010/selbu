@@ -1,0 +1,146 @@
+  <div class="container">
+    <div class="input-form-backgroud row"> 
+        <div class="input-form col-md-12 mx-auto"> 
+            <h4 class="mb-3">매물 추가</h4> 
+            <form class="validation-form" novalidate> 
+                <div class="row"> 
+                  <div class="col-md-6 mb-3"> 
+                    <label for="place_name">상권 구분</label> 
+                    <input type="text" class="form-control" #place_name placeholder="" value="" required> 
+                    <div class="invalid-feedback"> 상권 구분을 입력 해주세요. </div> 
+                </div> 
+                <div class="col-md-6 mb-3"> 
+                    <label for="nickname">상호</label> 
+                    <input type="text" class="form-control" #nickname placeholder="" value="" required> 
+                    <div class="invalid-feedback"> 상호를 입력해주세요. </div> 
+                </div> 
+                </div> 
+                <div class="row"> 
+                  <div class="col-md-6 mb-3"> 
+                    <label for="lessor_home_number">임차인 전화 번호</label> 
+                    <input type="text" class="form-control" #lessor_home_number required> 
+                    <div class="invalid-feedback"> 임차인 전화 번호를 입력해주세요. </div> 
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="lessor_phone_number">임차인 휴대폰 번호</label> 
+                    <input type="text" class="form-control" #lessor_phone_number required> 
+                    <div class="invalid-feedback"> 임차인 휴대폰 번호를 입력해주세요. </div> 
+                </div>
+              </div>
+                <div class="row"> 
+                  <div class="col-md-6 mb-3">
+                    <label for="address">주소</label> 
+                    <input type="text" class="form-control" #place required> 
+                    <div class="invalid-feedback"> 주소를 입력해주세요. </div> 
+                </div> 
+                <div class="col-md-6 mb-3">
+                    <label for="address2">상세 주소</label> 
+                    <input type="text" class="form-control" #detail_place required>
+                    <div class="invalid-feedback"> 상세 주소를 입력해주세요. </div> 
+                </div>
+                </div>
+                <div class="row"> 
+                  <div class="col-md-6 mb-3">
+                    <label for="upjong">업종</label> 
+                    <input type="text" class="form-control" #upjong required> 
+                    <div class="invalid-feedback"> 업종을 입력해주세요. </div> 
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="detail_upjong">상세 업종</label> 
+                    <input type="text" class="form-control" #detail_upjong required> 
+                    <div class="invalid-feedback"> 상세 업종을 입력해주세요. </div> 
+                </div>
+              </div>
+              <div class="row"> 
+                <div class="col-md-6 mb-3"> 
+                    <label for="call_date">통화 일자</label> 
+                    <input type="date" class="form-control" #call_date required> 
+                    <div class="invalid-feedback"> 통화 일자를 입력해주세요. </div> 
+                </div>
+                <div class="col-md-6 mb-3"> 
+                    <label for="call_content">통화 내용</label> 
+                    <input type="text" class="form-control" #call_content required> 
+                    <div class="invalid-feedback"> 통화 내용을 입력해주세요. </div> 
+                </div>
+              </div>
+                <div class="row"> 
+                    <div class="col-md-3 mb-3">
+                      <label for="deposit">보증금</label> 
+                      <input type="text" class="form-control" #deposit placeholder="" value="" required> 
+                      <div class="invalid-feedback"> 보증금을 입력해주세요. </div> 
+                  </div> 
+                  <div class="col-md-3 mb-3"> 
+                      <label for="month_price">월세</label> 
+                      <input type="text" class="form-control" #month_price placeholder="" value="" required> 
+                      <div class="invalid-feedback"> 월세를 입력해주세요. </div> 
+                  </div>
+                  <div class="col-md-3 mb-3"> 
+                      <label for="entitlement">권리금</label> 
+                      <input type="text" class="form-control" #entitlement placeholder="" value="" required> 
+                      <div class="invalid-feedback"> 권리금을 입력해주세요. </div> 
+                  </div>
+                  <div class="col-md-3 mb-3"> 
+                      <label for="administrative_expenses">관리비</label> 
+                      <input type="text" class="form-control" #administrative_expenses placeholder="" value="" required> 
+                      <div class="invalid-feedback"> 관리금을 입력해주세요. </div> 
+                  </div>
+                </div>
+                <div class="col-md-12 mb-3"> 
+                    <label for="acreage">평수</label> 
+                    <input class="form-control" #acreage placeholder="" value="" required> 
+                    <div class="invalid-feedback"> 평수를 입력해주세요. </div> 
+                </div>
+                <div class="col-md-12 mb-3"> 
+                    <label for="other_information">기타 내용</label> 
+                    <input type="text" class="form-control" #other_information placeholder="" value="" required> 
+                    <div class="invalid-feedback"> 기타내용을 입력해주세요. </div> 
+                </div>
+                <div class="col-md-12 mb-3"> 
+                  <label for="status">매물 상태</label> 
+                      <select class="custom-select d-block w-100" #status required> 
+                          <option value="접수">접수</option> 
+                          <option value="마감">마감</option> 
+                          <option value="보류">보류</option> 
+                      </select> 
+              </div>
+                <div class="row"> 
+                    <div class="col-md-6 mb-3"> 
+                        <label for="receipt">접수 유무</label> 
+                        <select class="custom-select d-block w-100" #receipt required> 
+                            <!-- <option value=""></option>  -->
+                            <option value="O">O</option> 
+                            <option value="X">X</option> 
+                        </select> 
+                    </div>
+                    <div class="col-md-6 mb-3"> 
+                        <label for="receipt_date">접수 일자</label>
+                        <input type="date" class="form-control" #receipt_date required>
+                    </div> 
+                </div>
+                  <button class="btn btn-primary btn-lg btn-block" (click)="goBack()">뒤로가기</button>
+                  &nbsp;
+                  <button class="btn btn-primary btn-lg btn-block" (click)="add(
+                    place_name.value,
+                    place.value,
+                    detail_place.value,
+                    nickname.value,
+                    lessor_home_number.value,
+                    lessor_phone_number.value,
+                    upjong.value,
+                    detail_upjong.value,
+                    call_date.value,
+                    call_content.value,
+                    receipt.value,
+                    receipt_date.value,
+                    entitlement.value,
+                    deposit.value,
+                    month_price.value,
+                    acreage.value,
+                    administrative_expenses.value,
+                    other_information.value,
+                    status.value
+                    );">매물 등록</button>
+              </form> 
+    </div>
+  </div>
+</div>

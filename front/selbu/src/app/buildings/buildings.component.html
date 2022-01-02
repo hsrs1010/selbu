@@ -1,0 +1,23 @@
+<div>
+  <table class="table table-hover">
+    <thead style="text-align: center;">
+      <tr>  
+        <th scope="col-md-3">매물 번호</th>
+        <th scope="col-md-3">주소</th>
+        <th scope="col-md-3">상태</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let selbu of selbuResp" style="text-align: center;">
+          <th routerLink="/detail/{{selbu.id}}" scope="row">{{selbu.id}}</th>
+          <th routerLink="/detail/{{selbu.id}}" scope="row">{{selbu.place}}</th>
+          <th routerLink="/detail/{{selbu.id}}" scope="row">{{selbu.status}}</th>
+      </tr>
+    </tbody>
+  </table>
+  <a class="btn btn-primary" routerLink="/post">매물 추가</a>
+  <br>
+  <br>
+  <app-pagination></app-pagination>
+</div>
+<br>

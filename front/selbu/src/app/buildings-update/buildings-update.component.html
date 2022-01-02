@@ -1,0 +1,124 @@
+<div class="container" >
+    <div class="input-form-backgroud row" > 
+        <div class="input-form col-md-12 mx-auto" *ngIf="selbu">
+            <h4 class="mb-3">매물 수정</h4> 
+            <form class="validation-form" novalidate > 
+                <div class="row"> 
+                    <div class="col-md-6 mb-3"> 
+                        <label for="place_name">상권 구분</label> 
+                        <input type="text" class="form-control" id="place_name" name="place_name" [(ngModel)]="selbu.place_name" required> 
+                    </div> 
+                    <div class="col-md-6 mb-3"> 
+                        <label for="nickname">상호</label> 
+                        <input type="text" class="form-control" #nickname placeholder="" value="" name="nickname" [(ngModel)]="selbu.nickname" required> 
+                        <div class="invalid-feedback"> 상호를 입력해주세요. </div> 
+                    </div> 
+                </div> 
+                <div class="row"> 
+                    <div class="col-md-6 mb-3"> 
+                        <label for="lessor_home_number">임차인 전화 번호</label> 
+                        <input type="text" class="form-control" #lessor_home_number name="lessor_home_number" [(ngModel)]="selbu.lessor_home_number" required> 
+                    <div class="invalid-feedback"> 임차인 전화 번호를 입력해주세요. </div> 
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="lessor_phone_number">임차인 휴대폰 번호</label> 
+                        <input type="text" class="form-control" #lessor_phone_number name="lessor_phone_number" [(ngModel)]="selbu.lessor_phone_number" required> 
+                        <div class="invalid-feedback"> 임차인 휴대폰 번호를 입력해주세요. </div> 
+                    </div>
+                </div>
+                <div class="row"> 
+                    <div class="col-md-6 mb-3">
+                        <label for="place">주소</label> 
+                        <input type="text" class="form-control" #place name="place" [(ngModel)]="selbu.place" required> 
+                        <div class="invalid-feedback"> 주소를 입력해주세요. </div> 
+                    </div> 
+                    <div class="col-md-6 mb-3">
+                        <label for="detail_place">상세 주소</label> 
+                        <input type="text" class="form-control" #detail_place name="detail_place" [(ngModel)]="selbu.detail_place" required>
+                        <div class="invalid-feedback"> 상세 주소를 입력해주세요. </div> 
+                    </div>
+                </div>
+                <div class="row"> 
+                    <div class="col-md-6 mb-3">
+                        <label for="upjong">업종</label> 
+                        <input type="text" class="form-control" #upjong name="upjong" [(ngModel)]="selbu.upjong" required> 
+                        <div class="invalid-feedback"> 업종을 입력해주세요. </div> 
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="detail_upjong">상세 업종</label> 
+                        <input type="text" class="form-control" #detail_upjong name="detail_upjong" [(ngModel)]="selbu.detail_upjong" required> 
+                        <div class="invalid-feedback"> 상세 업종을 입력해주세요. </div> 
+                    </div>
+                </div>
+                <div class="row"> 
+                    <div class="col-md-6 mb-3"> 
+                        <label for="call_date">통화 일자</label> 
+                        <input type="date" class="form-control" #call_date name="call_date" [(ngModel)]="selbu.call_date" required> 
+                        <div class="invalid-feedback"> 통화 일자를 입력해주세요. </div> 
+                    </div>
+                    <div class="col-md-6 mb-3"> 
+                        <label for="call_content">통화 내용</label> 
+                        <input type="text" class="form-control" #call_content name="call_content" [(ngModel)]="selbu.call_content" required> 
+                        <div class="invalid-feedback"> 통화 내용을 입력해주세요. </div> 
+                    </div>
+                </div>
+                <div class="row"> 
+                    <div class="col-md-3 mb-3">
+                      <label for="deposit">보증금</label> 
+                      <input type="text" class="form-control" #deposit placeholder="" value="" name="deposit" [(ngModel)]="selbu.deposit" required> 
+                      <div class="invalid-feedback"> 보증금을 입력해주세요. </div> 
+                  </div> 
+                  <div class="col-md-3 mb-3"> 
+                      <label for="month_price">월세</label> 
+                      <input type="text" class="form-control" #month_price placeholder="" value="" name="month_price" [(ngModel)]="selbu.month_price" required> 
+                      <div class="invalid-feedback"> 월세를 입력해주세요. </div> 
+                  </div>
+                  <div class="col-md-3 mb-3"> 
+                      <label for="entitlement">권리금</label> 
+                      <input type="text" class="form-control" #entitlement placeholder="" value="" name="entitlement" [(ngModel)]="selbu.entitlement" required> 
+                      <div class="invalid-feedback"> 권리금을 입력해주세요. </div> 
+                  </div>
+                  <div class="col-md-3 mb-3"> 
+                      <label for="administrative_expenses">관리비</label> 
+                      <input type="text" class="form-control" #administrative_expenses placeholder="" value="" name="administrative_expenses" [(ngModel)]="selbu.administrative_expenses" required> 
+                      <div class="invalid-feedback"> 관리금을 입력해주세요. </div> 
+                  </div>
+                </div>
+                <div class="col-md-12 mb-3"> 
+                    <label for="acreage">평수</label> 
+                    <input class="form-control" #acreage placeholder="" value="" name="acreage" [(ngModel)]="selbu.acreage" required> 
+                    <div class="invalid-feedback"> 평수를 입력해주세요. </div> 
+                </div>
+                <div class="col-md-12 mb-3"> 
+                    <label for="other_information">기타 내용</label> 
+                    <input type="text" class="form-control" #other_information placeholder="" value="" name="other_information" [(ngModel)]="selbu.other_information" required> 
+                    <div class="invalid-feedback"> 기타내용을 입력해주세요. </div> 
+                </div>
+                <div class="col-md-12 mb-3"> 
+                    <label for="status">매물 상태</label> 
+                        <select id="status" class=" d-block w-100" name="status" [(ngModel)]="selbu.status" required > 
+                            <option value="접수">접수</option> 
+                            <option value="마감">마감</option> 
+                            <option value="보류">보류</option> 
+                        </select>
+                </div>
+                <div class="row"> 
+                    <div class="col-md-6 mb-3"> 
+                        <label for="receipt">접수 유무</label> 
+                        <select id="receipt" class=" d-block w-100" #receipt name="receipt" [(ngModel)]="selbu.receipt" required> 
+                            <option value="O">O</option> 
+                            <option value="X">X</option> 
+                        </select> 
+                    </div>
+                    <div class="col-md-6 mb-3"> 
+                        <label for="receipt_date">접수 일자</label>
+                        <input type="date" class="form-control" name="receipt_date" [(ngModel)]="selbu.receipt_date" #receipt_date required>
+                    </div> 
+                </div>
+                <button class="btn btn-primary btn-lg btn-block" (click)="goBack()">뒤로가기</button>
+                &nbsp;
+                <button class="btn btn-primary btn-lg btn-block" type="submit" (click)="save(selbu.id)">매물 수정</button>
+            </form> 
+    </div>
+  </div>
+</div>

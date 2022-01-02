@@ -1,0 +1,8 @@
+@media print {
+    /* div{
+        height: 300px;
+    } */
+    .btn{
+        float: left;
+    }
+}

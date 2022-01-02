@@ -1,0 +1,9 @@
+
+<!-- 지도를 표시할 div 입니다 -->
+<!-- <div *ngIf="selbu">
+        <button (click)="serchPlace(selbu.place)">버튼</button>
+</div> -->
+<button *ngIf="selbu" class="btn btn-primary" (click)="serchPlace(selbu.place)">지도 보기</button>
+<br><br>
+<div id="map" class="" style="width:100%;height:300px;"></div>
+    
