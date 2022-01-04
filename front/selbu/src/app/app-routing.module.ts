@@ -9,13 +9,12 @@ import { KakaoMapComponent } from './kakao-map/kakao-map.component';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: '/buildings', pathMatch: 'full' },
-  // { path: 'buildings/:page', component: BuildingsComponent},
+  { path: '', redirectTo: '/buildings-page/0', pathMatch: 'full' },
   { path: 'detail/:id', component: BuildingsDetailComponent },
   { path: 'update/:id', component: BuildingsUpdateComponent },
   { path: 'delete/:id', component: BuildingsDeleteComponent},
   { path: 'post', component: BuildingsPostComponent},
-  { path: ':pageNumber', component: BuildingsComponent },
+  { path: 'buildings-page/:pageNumber', component: BuildingsComponent},
   { path: 'map/:id', component: KakaoMapComponent}
 ];
 

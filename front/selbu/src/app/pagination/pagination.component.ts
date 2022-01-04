@@ -10,14 +10,16 @@ import { SelbuRespService } from '../selbuResp.service';
 })
 export class PaginationComponent implements OnInit {
   selbuResp: SelbuResp[] = [];
-
+  page = 0;
   constructor(
     private selbuRespService : SelbuRespService
-  ) { }
+    
+  ) {}
 
   ngOnInit(): void {
     // this.test1()
-    this.getTotalPages()
+    // this.getTotalPages()
+    // this.getBuildingsPage()
   }
 
   test1():void{
@@ -25,14 +27,30 @@ export class PaginationComponent implements OnInit {
     test.subscribe(data => console.log(data.totalPages))
   }
 
-  getPageable(): void{
-    this.selbuRespService.getBuildingsPageInfo()
-    .subscribe(selburesp => this.selbuResp = selburesp.pageable)
-  }
+  // getPageable(): void{
+  //   this.selbuRespService.getBuildingsPageInfo()
+  //   .subscribe(selburesp => this.selbuResp = selburesp.pageable)
+  // }
 
   getTotalPages():void{
     this.selbuRespService.getBuildingsTotalPages()
     .subscribe(selburesp => this.selbuResp = selburesp.totalPages)
+  }
+
+  getBuildingsPage(): void{
+    this.selbuRespService.getBuildingsPage(this.page)
+    .subscribe(selburesp => this.selbuResp = selburesp.content)
+  }
+
+  nextPage():void{
+    this.page = this.page+1;
+    this.getBuildingsPage()
+    console.log('다음')
+  }
+
+  prevPage():void{
+    this.page = this.page-1;
+    this.getBuildingsPage()
   }
 
 }

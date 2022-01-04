@@ -18,6 +18,21 @@
   <a class="btn btn-primary" routerLink="/post">매물 추가</a>
   <br>
   <br>
-  <app-pagination></app-pagination>
-</div>
-<br>
+  <nav>
+    <ul class="pagination">
+      <li class="page-item">
+        <a class="page-link" (click)="refreash()" routerLink ="/buildings-page/{{(pageable == 0) ? 0: pageable -1}}">이전</a>
+      </li>
+      <!-- <li class="page-item" *ngFor="let selbu of selbuResp; let i = index">
+        <a class="page-link">{{i+1}}</a>
+      </li> -->
+      <!-- <li class="page-item" *ngFor="let pages of totalPage; let i = index">
+        <a class="page-link">{{i+1}}</a>
+      </li> -->
+      <li class="page-item">
+        <a class="page-link" (click)="refreash()" routerLink ="/buildings-page/{{pageable + 1}}" >다음</a>
+      </li>
+    </ul>
+  </nav>
+<p>{{pageable}} 페이지</p>
+<p>총 페이지 : {{totalPage}}</p>

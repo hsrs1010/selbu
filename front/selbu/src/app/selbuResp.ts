@@ -8,8 +8,8 @@ export interface SelbuResp
     
     content: any;
     
-    pageable: any;
-    pageNumber: number;
+    // pageable: any;
+    // pageNumber: number;
     pageSize: number;
     totalPages:number;
 }

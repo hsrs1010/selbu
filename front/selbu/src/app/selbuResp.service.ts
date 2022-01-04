@@ -21,11 +21,17 @@ export class SelbuRespService {
         private http: HttpClient
       ) { }
 
+    private extractData(res: Response) {
+        let body = res;
+       return body || { };
+    }
+
     getBuildingsPage(page:number): Observable<SelbuResp>{
         const pageUrl = `${this.pageUrl}/page?page=${page}`
         // console.log(this.http.get<Selbu[]>(pageUrl, this.httpOptions))
         return this.http.get<SelbuResp>(pageUrl, this.httpOptions)
     }
+    
     getBuildingsPageInfo(): Observable<SelbuResp>{
         const pageUrl = `${this.pageUrl}/page`
         // console.log(this.http.get<Selbu[]>(pageUrl, this.httpOptions))
@@ -34,7 +40,7 @@ export class SelbuRespService {
 
     getBuildingsTotalPages(): Observable<any>{
         const pageUrl = `${this.pageUrl}/page`
-        console.log(this.http.get<number[]>(pageUrl, this.httpOptions))
+        console.log(this.http.get<number>(pageUrl, this.httpOptions))
         return this.http.get<number>(pageUrl, this.httpOptions)
     }
 }
