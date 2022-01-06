@@ -1,13 +1,13 @@
 <form>
     <div class="mx-auto mt-5 search-bar input-group mb-3">
-      <input #searchBox type="text" class="form-control rounded-pill" placeholder="주소를 입력하여 검색" (input)="search(searchBox.value)">
+        <input #searchBox type="text" class="form-control rounded-pill" placeholder=" 주소를 입력하여 검색" (input)="search(searchBox.value)">
     </div>
     <ul class="mx-auto search-result">
         <li *ngFor="let selbu of selbus | async">
-            <a routerLink="/detail/{{selbu.id}}" (click)="refreash()">
+            <p id="searchResult" routerLink="/detail/{{selbu.id}}" (click)="refreash()">
                 {{selbu.place}}
-                <hr>
-            </a>
+                <!-- <hr> -->
+            </p>
         </li>
     </ul>
 </form>

@@ -64,54 +64,25 @@ export class BuildingsComponent implements OnInit {
     .subscribe(pageable => this.pageable = pageable.pageable.pageNumber)
   }
 
-  getBuildingsTotalPage():void{
-    this.selbuRespService.getBuildingsTotalPages()
-    .subscribe(data => this.totalPage = data.totalPages)
-  }
-
-  // getBuildingsTotalPage():void {
-  //   this.selbuRespService.getBuildingsTotalPages().subscribe((data) => {
-  //     for(let i = 0; i < data.totalPages; i++){
-  //       this.totalPagesArr.push(i);
-  //     }
-  //   }
+  // getBuildingsTotalPage():void{
+  //   this.selbuRespService.getBuildingsTotalPages()
+  //   .subscribe(data => this.totalPage = data.totalPages)
   // }
+
+  getBuildingsTotalPage():void {
+    this.selbuRespService.getBuildingsTotalPages().subscribe((data) => {
+      for(let i = 0; i < data.totalPages; i++){
+        this.totalPagesArr.push(i);
+      }
+    })
+  }
 
   refreash(): void{
     console.log(this.pageNumber)
     setTimeout(function(){
       window.location.reload();
     },
-    50);
+    10);
   }
-
-
-
-  // nextPage():void{
-  //   let page = parseInt(this.route.snapshot.paramMap.get('pageNumber')!,10);
-  //   page = page+1;
-  //   console.log(page)
-  //   this.data()
-  //   console.log('다음')
-  //   this.getBuildingsPagable()
-  //   this.getBuildingsPage()
-  // }
-
-  // prevPage():void{
-  //   let page = parseInt(this.route.snapshot.paramMap.get('pageNumber')!,10);
-  //   page = page-1;
-  //   if(page < 0){
-  //     page = 0
-  //   }
-  //   this.data()
-  //   console.log(page)
-  //   console.log('이전')
-  //   this.getBuildingsPagable()
-  //   this.getBuildingsPage()
-  // }
-
-
-
-
 
 }
